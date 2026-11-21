@@ -1,0 +1,6 @@
+number of (length, constraints) cases 127
+permutation/constraints pairs per tilt 347741
+exact tilts 3
+maximum cost-bound improvement from local legal support, independent blocks 41800928
+maximum cost-bound improvement from local legal support, associated windows 34067845
+strongest sliding-window cap and selected zero count 1158912 4

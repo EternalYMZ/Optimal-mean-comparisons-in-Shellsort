@@ -1,0 +1,100 @@
+gap 32845824; length 30; tilt 1/8; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.999999968651
+gap 32845824; length 31; tilt 1/8; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.999999967424
+gap 30108672; length 33; tilt 1/8; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.999999964968
+gap 30108672; length 34; tilt 1/8; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.999999963740
+gap 27599616; length 36; tilt 1/8; copies 21185792; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 324771; legal mass 0.999999961285
+gap 27599616; length 37; tilt 1/8; copies 6413824; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 354296; legal mass 0.999999960057
+baseline improvement >= 1 comparisons
+gap 32845824; length 30; tilt 3/4; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.087987144878
+gap 32845824; length 31; tilt 3/4; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.077352495639
+stage block 11-11; at 3/4 refined target 2414380218
+gap 32845824; length 30; tilt 13/16; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.010455349172
+gap 32845824; length 31; tilt 13/16; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.008139492299
+stage block 11-11; at 13/16 refined target 2389721762
+gap 32845824; length 30; tilt 27/32; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.002276093187
+gap 32845824; length 31; tilt 27/32; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.001615349386
+stage block 11-11; at 27/32 refined target 2382271969
+gap 32845824; length 30; tilt 7/8; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000337167169
+gap 32845824; length 31; tilt 7/8; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000211720753
+stage block 11-11; at 7/8 refined target 2377632735
+gap 32845824; length 30; tilt 29/32; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000032037663
+gap 32845824; length 31; tilt 29/32; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000017139050
+stage block 11-11; at 29/32 refined target 2375577749
+gap 32845824; length 30; tilt 15/16; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000001861170
+gap 32845824; length 31; tilt 15/16; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000000810653
+stage block 11-11; at 15/16 refined target 2375959307
+gap 32845824; length 30; tilt 61/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000000369790
+gap 32845824; length 31; tilt 61/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000000142673
+stage block 11-11; at 61/64 refined target 2377039444
+gap 32845824; length 30; tilt 31/32; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000000064573
+gap 32845824; length 31; tilt 31/32; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000000021799
+stage block 11-11; at 31/32 refined target 2378710047
+gap 32845824; length 30; tilt 63/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000000009940
+gap 32845824; length 31; tilt 63/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000000002902
+stage block 11-11; at 63/64 refined target 2380976325
+gap 32845824; length 30; tilt 1; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.000000001357
+gap 32845824; length 31; tilt 1; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.000000000339
+stage block 11-11; at 1 refined target 2383849363
+BEST stage block 11-11; old target 2459987844; new target 2375577749; tilt 29/32
+gap 32845824; length 30; tilt 41/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.523095467928
+gap 32845824; length 31; tilt 41/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.505897318438
+gap 30108672; length 33; tilt 41/64; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.473192597283
+gap 30108672; length 34; tilt 41/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.457644272320
+stage block 11-12; at 41/64 refined target 2986097711
+gap 32845824; length 30; tilt 21/32; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.449650678946
+gap 32845824; length 31; tilt 21/32; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.431446041286
+gap 30108672; length 33; tilt 21/32; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.397237479878
+gap 30108672; length 34; tilt 21/32; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.381167279834
+stage block 11-12; at 21/32 refined target 2982633236
+gap 32845824; length 30; tilt 43/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.375928334799
+gap 32845824; length 31; tilt 43/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.357336565277
+gap 30108672; length 33; tilt 43/64; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.322891653751
+gap 30108672; length 34; tilt 43/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.306938696358
+stage block 11-12; at 43/64 refined target 2980876965
+gap 32845824; length 30; tilt 11/16; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.304559709277
+gap 32845824; length 31; tilt 11/16; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.286300601937
+gap 30108672; length 33; tilt 11/16; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.253032683035
+gap 30108672; length 34; tilt 11/16; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.237881615563
+stage block 11-12; at 11/16 refined target 2980690887
+gap 32845824; length 30; tilt 45/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.238146546227
+gap 32845824; length 31; tilt 45/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.220963591904
+gap 30108672; length 33; tilt 45/64; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.190264634692
+gap 30108672; length 34; tilt 45/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.176557345238
+stage block 11-12; at 45/64 refined target 2981951142
+BEST stage block 11-12; old target 3013339061; new target 2980690887; tilt 11/16
+gap 32845824; length 30; tilt 9/16; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.819414610737
+gap 32845824; length 31; tilt 9/16; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.811111030804
+gap 30108672; length 33; tilt 9/16; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.794756602577
+gap 30108672; length 34; tilt 9/16; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.786703733970
+gap 27599616; length 36; tilt 9/16; copies 21185792; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 324771; legal mass 0.770841386489
+gap 27599616; length 37; tilt 9/16; copies 6413824; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 354296; legal mass 0.763030539249
+stage block 11-13; at 9/16 refined target 3460760261
+gap 32845824; length 30; tilt 37/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.773386882152
+gap 32845824; length 31; tilt 37/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.763272900964
+gap 30108672; length 33; tilt 37/64; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.743442095059
+gap 30108672; length 34; tilt 37/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.733721217445
+gap 27599616; length 36; tilt 37/64; copies 21185792; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 324771; legal mass 0.714658049941
+gap 27599616; length 37; tilt 37/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 354296; legal mass 0.705312972489
+stage block 11-13; at 37/64 refined target 3458498827
+gap 32845824; length 30; tilt 19/32; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.720147600425
+gap 32845824; length 31; tilt 19/32; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.708118248071
+gap 30108672; length 33; tilt 19/32; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.684662620211
+gap 30108672; length 34; tilt 19/32; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.673228563580
+gap 27599616; length 36; tilt 19/32; copies 21185792; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 324771; legal mass 0.650928210967
+gap 27599616; length 37; tilt 19/32; copies 6413824; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 354296; legal mass 0.640056506577
+stage block 11-13; at 19/32 refined target 3459068114
+gap 32845824; length 30; tilt 39/64; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.660026718313
+gap 32845824; length 31; tilt 39/64; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.646081937218
+gap 30108672; length 33; tilt 39/64; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.619075974901
+gap 30108672; length 34; tilt 39/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.606000513694
+gap 27599616; length 36; tilt 39/64; copies 21185792; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 324771; legal mass 0.580669003752
+gap 27599616; length 37; tilt 39/64; copies 6413824; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 354296; legal mass 0.568402972553
+stage block 11-13; at 39/64 refined target 3462219797
+gap 32845824; length 30; tilt 5/8; copies 18220544; old distances (11, 12, 22, 23, 24); ideals 157460; legal mass 0.593872161854
+gap 32845824; length 31; tilt 5/8; copies 14625280; old distances (11, 12, 22, 23, 24); ideals 180426; legal mass 0.578150263099
+gap 30108672; length 33; tilt 5/8; copies 23694848; old distances (11, 12, 22, 23, 24, 33); ideals 236196; legal mass 0.547953431748
+gap 30108672; length 34; tilt 5/8; copies 6413824; old distances (11, 12, 22, 23, 24, 33); ideals 265721; legal mass 0.533453484645
+gap 27599616; length 36; tilt 5/8; copies 21185792; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 324771; legal mass 0.505589246239
+gap 27599616; length 37; tilt 5/8; copies 6413824; old distances (11, 12, 22, 23, 24, 33, 34, 35, 36); ideals 354296; legal mass 0.492207453395
+stage block 11-13; at 5/8 refined target 3467730803
+BEST stage block 11-13; old target 3474669995; new target 3458498827; tilt 37/64

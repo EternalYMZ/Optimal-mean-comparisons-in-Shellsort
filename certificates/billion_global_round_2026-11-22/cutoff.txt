@@ -1,0 +1,7 @@
+1000000 number excluded 44 integer mean lower 50608623514 t 13/100 scan-only threshold 51
+10000000 number excluded 44 integer mean lower 50111544097 t 13/100 scan-only threshold 51
+25000000 number excluded 45 integer mean lower 50184004217 t 1/8 scan-only threshold 52
+50000000 number excluded 47 integer mean lower 50523246947 t 3/25 scan-only threshold 53
+100000000 number excluded 50 integer mean lower 50046313758 t 21/200 scan-only threshold 56
+200000000 number excluded 59 integer mean lower 50298567494 t 13/200 scan-only threshold 63
+250000000 number excluded 64 integer mean lower 50091688034 t 9/200 scan-only threshold 67
