@@ -21,4 +21,4 @@ Additional executable check: after the build, run `lake env lean PhysicalArrayCh
 
 ## Proof guide
 
-[Read the proof guide](brief.md). At one billion distinct keys, the rational finite certificate in [certificates](certificates) gives a mean of at least 50,017,307,496 key comparisons for every table with at most seven passes. The trial-coordinate costs printed by the checker describe its relaxed distributions.
+[Read the proof guide](brief.md). At one billion distinct keys, the [written entropy proof](certificates/seven-pass-proof.md) and its rational certificate give a mean of at least 50,017,307,496 key comparisons for every table with at most seven passes. The trial-coordinate costs printed by the checker describe its relaxed distributions.

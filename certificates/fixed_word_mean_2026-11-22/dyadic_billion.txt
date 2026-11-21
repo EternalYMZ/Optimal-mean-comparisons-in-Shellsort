@@ -1,0 +1,3 @@
+n 1000000000 passes 30 integer outer bounds 16942498484858 16942498484859
+interval endpoints in millionths (outward) 16942498484858418398 16942498484858543960
+all passes checked at n=2..9

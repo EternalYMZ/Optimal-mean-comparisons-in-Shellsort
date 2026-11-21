@@ -10,3 +10,5 @@ $$\log_2(n!)\le m_n\le(1+2^{165})n\log_2 n.$$
 **Why is the order optimal?** The comparison transcripts for a fixed table form a binary prefix code. Distinct rank permutations require different transcripts: identical outcomes would move the same original labels to the same slots. The uniform mean transcript length is therefore at least $\log_2(n!)$. The finite family of legal tables attains its minimum. The upper bound supplies its order of growth. Efficiently generating an exact minimizer and convergence of $m_n/(n\log_2 n)$ are separate questions.
 
 [HarvestScaleNumbers.lean](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/fe3fbebaa0bada514b2fe3e6c2cd61cd99a858f4/Shellsort/HarvestScaleNumbers.lean) · [VerifiedOptimum.lean](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/fe3fbebaa0bada514b2fe3e6c2cd61cd99a858f4/Shellsort/VerifiedOptimum.lean)
+
+[Written proof of the seven-pass lower bound at one billion keys](certificates/seven-pass-proof.md)

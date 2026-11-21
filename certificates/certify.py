@@ -273,7 +273,7 @@ def main():
           int(N*short[0]),"min_length",short[1])
     # For longer chains the first pass itself contributes strictly more than
     # 50.017 comparisons per key, including the case of length exactly 201.
-    assert lengths[201][0]>F(50017,1000)
+    assert lengths[201][0] > short[0]
 
     t=F(1,2)
     den=log_interval(1/t)
