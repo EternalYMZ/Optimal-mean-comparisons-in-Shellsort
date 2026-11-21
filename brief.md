@@ -1,13 +1,12 @@
-# 一张在读取输入前选定的表，怎样达到最优平均比较阶？
+# How can a gap table chosen before reading the input attain the optimal average order?
 
-令 $m_n$ 为普通 Shellsort 在所有合法间隔表上的最小平均键比较次数。间隔表只依赖长度 $n$，严格递减、各项小于 $n$ 且末项为 $1$。输入是 $n$ 个互异键的均匀随机排列，每条链使用线性插入，遇到使扫描停止的键也计一次比较。对每个 $n\ge2$，Lean 给出
+Let $m_n$ be the minimum expected number of actual key comparisons over strictly decreasing positive gap tables below $n$ ending in 1. The input is a uniform permutation of distinct keys. Each chain uses linear insertion, including the comparison that stops a scan when one occurs. Each table is fixed before reading the input. For every $n\ge2$, the Lean theorem gives
+$$\log_2(n!)\le m_n\le(1+2^{165})n\log_2 n.$$
 
-$$
-\log_2(n!)\le m_n\le(1+2^{165})\,n\log_2 n.
-$$
+**How much displacement can a pass afford?** For rank $x$ in slot $p(x)$ write $F=\sum_x|p(x)-x|$ and $Q=\sum_x(p(x)-x)^2$. A gap-$h$ pass uses at most $2F/h$ successful shifts and at most $n$ stopping comparisons. Each pass can only decrease $F$. If all gaps in a block are at least $H$ and its initial state satisfies $\sqrt{\mathbb E Q/n}\le LH$, Cauchy–Schwarz bounds the mean cost of each pass by $(1+2L)n$. Only the analyst uses final ranks.
 
-**一趟怎样才能只花 $O(n)$ 次比较？** 设 $p(x)$ 为秩 $x$ 当前所在的槽，$F=\sum_x|p(x)-x|$，$Q=\sum_x(p(x)-x)^2$。间隔为 $h$ 的一趟至多有 $2F/h$ 次成功右移，还会有至多 $n$ 次停止比较。设一段间隔都至少为 $H$。各趟都不会增加 $F$，所以只要段首满足 $\sqrt{\mathbb E Q/n}\le LH$，柯西–施瓦茨不等式就把段内每趟的平均比较数控制在 $(1+2L)n$。秩和到终点的距离在此供证明使用，运行程序只访问普通插入所比较的键。
+**How can the scale decrease?** At scale $c$, apply two fixed gaps and choose a third from a finite set near $c$. Decompose threshold discrepancies by frequency and combine contributions with the same reduced frequency before estimating them. For each initial permutation the candidate average of the squared displacement after three passes is at most $2^{-47}Q+2^{98}cF$. Now average over the actual distribution at the start of the block. Interchanging the two finite averages gives one common gap attaining the bound in expectation. The choice can therefore be fixed before seeing the particular input. Iteration keeps mean squared displacement small at successive scales. A witnessing schedule uses at most $\lfloor\log_2 n\rfloor$ passes.
 
-**间隔逐段变小时，怎样保持这个条件？** 在一个尺度 $c$ 附近，先执行两个固定间隔，然后在 $c$ 附近的一组合法整数中选第三个间隔。证明对秩阈值的偏差分频率估计，将有相同既约频率的贡献先合并。由此得到一个对每个段首排列都有效的界。对候选第三间隔取平均，三趟后的平方位移至多为 $2^{-47}Q+2^{98}cF$。再对段首的真实输入分布取平均，交换两个有限求和，便有**一个共同的间隔**达到这个界。选择用的是整组输入的平均，因此可在读取待排数组前一次固定。逐段重复后，平方位移能随尺度下降，每段的比较账都能按每趟 $O(n)$ 结算。构造出的表有至多 $\lfloor\log_2n\rfloor$ 趟。
+**Why is the order optimal?** The comparison transcripts for a fixed table form a binary prefix code. Distinct rank permutations require different transcripts: identical outcomes would move the same original labels to the same slots. The uniform mean transcript length is therefore at least $\log_2(n!)$. The finite family of legal tables attains its minimum. The upper bound supplies its order of growth. Efficiently generating an exact minimizer and convergence of $m_n/(n\log_2 n)$ are separate questions.
 
-**为什么这给出了最优阶？** 固定一张合法表，程序的完整比较记录构成二元前缀码。两个不同的秩排列若得到同一记录，程序就会对相同的原始标签做相同的移动，无法把两者都排对。故 $n!$ 个等可能输入需要平均至少 $\log_2(n!)$ 次比较。合法表有限，最小值确实取得，刚才的短表给它提供了上界。廉价地生成精确最优表，以及 $m_n/(n\log_2 n)$ 有无极限，仍是独立的问题。[每个尺度的收缩估计](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/fe3fbebaa0bada514b2fe3e6c2cd61cd99a858f4/Shellsort/HarvestScaleNumbers.lean) · [最优表与实际比较计数](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/fe3fbebaa0bada514b2fe3e6c2cd61cd99a858f4/Shellsort/VerifiedOptimum.lean)
+[HarvestScaleNumbers.lean](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/fe3fbebaa0bada514b2fe3e6c2cd61cd99a858f4/Shellsort/HarvestScaleNumbers.lean) · [VerifiedOptimum.lean](https://github.com/EternalYMZ/Optimal-mean-comparisons-in-Shellsort/blob/fe3fbebaa0bada514b2fe3e6c2cd61cd99a858f4/Shellsort/VerifiedOptimum.lean)
