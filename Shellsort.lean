@@ -1,0 +1,27 @@
+import Shellsort.Actual214Calibration
+import Shellsort.DivisiblePrefixExchange
+import Shellsort.DivisibleThreeGapMatching
+import Shellsort.DivisibleThreeGapTerminal
+import Shellsort.FiniteSourceBootstrap
+import Shellsort.FirstGapMeanEnergy
+import Shellsort.HarvestChosenLower
+import Shellsort.PhysicalKeyOptimum
+import Shellsort.PreprocessedFullSchedule
+import Shellsort.PrescribedFirstGapLower
+import Shellsort.PrescribedFirstGapTailMatching
+import Shellsort.PrescribedFirstGapTailUpper
+import Shellsort.PrescribedFirstGapUpper
+import Shellsort.PrescribedTwoGapLower
+import Shellsort.PrescribedTwoGapMatching
+import Shellsort.PrescribedTwoGapUpper
+import Shellsort.RoughGapVariableScale
+import Shellsort.TwoGapPrefixCost
+import Shellsort.VerifiedOptimum
+import Shellsort.WarmRestart
+
+#check Shellsort.HarvestFullSchedule.exists_size_indexed_family
+#print axioms Shellsort.HarvestFullSchedule.exists_size_indexed_family
+#check Shellsort.PredeterminedOptimum.exists_optimal_executed_family
+#print axioms Shellsort.PredeterminedOptimum.exists_optimal_executed_family
+#check Shellsort.PhysicalKeyOptimum.exists_uniform_family_for_physical_keys
+#print axioms Shellsort.PhysicalKeyOptimum.exists_uniform_family_for_physical_keys
