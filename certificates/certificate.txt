@@ -1,0 +1,16 @@
+pass_count_at_most_7 lower_if_first_chain_length_at_most_201 50017307496 min_length 24
+first_gap_at_most 9558064 lower 50000000360 strictly_above_target True
+length_at_least 212541 excluded with cutoff 989000000 suffix_entropy_comparisons 27949795074
+active_prefix_excludes_length_at_least 207999 prefix_cost_before_failure 49552208094 forced_next_scan 492891657 input_bits_lower 28454657813
+gap_count_at_least 44 with gaps_at_most 1000000 lower 50163193729
+gap_count_at_least 44 with gaps_at_most 10000000 lower 50016258295
+gap_count_at_least 45 with gaps_at_most 20000000 lower 50106596671
+gap_count_at_least 47 with gaps_at_most 50000000 lower 50166470867
+gap_count_at_least 50 with gaps_at_most 100000000 lower 50026521411
+gap_count_at_least 59 with gaps_at_most 200000000 lower 50143938392
+gap_count_at_least 70 with gaps_at_most 300000000 lower 50360792715
+gap_count_at_least 107 with gaps_at_most 500000000 lower 50303375470
+product_11_13 trial_coordinate_law 45 passes largest_gap 815730721 entropy_lower 20328220027 input_entropy_upper 19723265858 mean_upper 48626467028
+eight_pass_two_real_head trial_coordinate_law head_mean_upper 7529656285 trial_entropy_lower 19775406744 input_entropy_upper 19723265858 trial_mean_upper 49082168327
+eight_or_fewer_passes first_gap_at_most 13063871 lower 50000000658
+eight_or_fewer_passes second_gap_at_least 241618785 lower 50000000015

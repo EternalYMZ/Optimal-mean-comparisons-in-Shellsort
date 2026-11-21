@@ -18,3 +18,7 @@ lake build
 Formal locations: [rank-input optimum](Shellsort/VerifiedOptimum.lean), [physical-key theorem](Shellsort/PhysicalKeyOptimum.lean), [short upper-bound witness](Shellsort/HarvestFullSchedule.lean).
 
 Additional executable check: after the build, run `lake env lean PhysicalArrayCheck.lean`. See [PhysicalArrayCheck.lean](PhysicalArrayCheck.lean).
+
+## Proof guide
+
+[Read the proof idea in Chinese](brief.md). At one billion distinct keys, the rational finite certificate in [certificates](certificates) gives a mean of at least 50,017,307,496 key comparisons for every table with at most seven passes. The trial-coordinate costs printed by the checker describe its relaxed distributions.
