@@ -1,0 +1,41 @@
+{
+  "consecutive": {
+    "revision": "776455d3d5e381fd92086cf5659f96674eaf5d4a",
+    "module": "Shellsort",
+    "roots": [
+      "Shellsort.ConsecutiveMenus.menu_density",
+      "Shellsort.ConsecutiveMenus.proposal_acceptance",
+      "Shellsort.ConsecutiveMenus.realized_table",
+      "Shellsort.ConsecutiveMenus.square_sum",
+      "Shellsort.ConsecutiveMenus.small_center_contraction",
+      "Shellsort.ConsecutiveMenus.random_small_center",
+      "Shellsort.ConsecutiveBlockBounds.three_pass_endpoints",
+      "Shellsort.ConsecutiveBlockBounds.random_block_propagate",
+      "Shellsort.ConsecutiveBlockBounds.spectral_coefficients",
+      "Shellsort.PrescribedInputLaw.exists_short_table"
+    ],
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "export_sha256": "5cdbd57d28444ce93933f4d8fa7f66a46e76b8e2973d3c02a3383c36bd5f5a32",
+    "checked_declarations": 22154,
+    "nanoda": "Checked 22154 declarations with no errors"
+  },
+  "submenu": {
+    "revision": "d439356fd87e130d86b879a68360d14acdbcbc30",
+    "module": "Shellsort.ConsecutiveMenuEnergy",
+    "roots": [
+      "Shellsort.ConsecutiveMenus.small_center_submenu"
+    ],
+    "permitted_axioms": [
+      "propext",
+      "Classical.choice",
+      "Quot.sound"
+    ],
+    "export_sha256": "f67c8f269c0b391154385c746f98ac33174c97886820a0ca6621bed8eac762ab",
+    "checked_declarations": 21358,
+    "nanoda": "Checked 21358 declarations with no errors"
+  }
+}

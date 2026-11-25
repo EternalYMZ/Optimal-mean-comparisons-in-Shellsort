@@ -34,6 +34,17 @@ python certificates/consecutive-blocks/verify_p04_spectral.py
 python certificates/consecutive-blocks/verify_p04_assembly.py
 ```
 
+The [replay index](certificates/consecutive-blocks/p04_lean_replay.json) identifies two historical proof revisions, their roots and their export fingerprints. The ten consecutive-block roots replay at `776455d` (22,154 declarations). The finite-center submenu theorem replays at `d439356` (21,358 declarations). To check them from this checkout, create the two worktrees below and run the script from this README's directory. It uses Python 3.11 or newer, the pinned Lake toolchain and Nanoda. For each worktree it records the theorem statements and digest in `.lake/p04-replay/`.
+
+```sh
+git worktree add --detach ../p04-consecutive 776455d3d5e381fd92086cf5659f96674eaf5d4a
+git worktree add --detach ../p04-submenu d439356fd87e130d86b879a68360d14acdbcbc30
+(cd ../p04-consecutive && lake exe cache get && lake build)
+(cd ../p04-submenu && lake exe cache get && lake build)
+python certificates/consecutive-blocks/replay_p04.py --repo ../p04-consecutive
+python certificates/consecutive-blocks/replay_p04.py --repo ../p04-submenu
+```
+
 ## Proof guide
 
 [Read the proof guide](brief.md). At one billion distinct keys, the [written entropy proof](certificates/seven-pass-proof.md) and its rational certificate give a mean of at least 50,017,307,496 key comparisons for every table with at most seven passes. The trial-coordinate costs printed by the checker describe its relaxed distributions.
