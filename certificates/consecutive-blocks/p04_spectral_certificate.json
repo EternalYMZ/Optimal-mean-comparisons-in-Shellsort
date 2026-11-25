@@ -1,0 +1,93 @@
+{
+  "passed": true,
+  "exact_arithmetic": true,
+  "menu_lower_coefficient": "3/7",
+  "menu_exception_rows": [
+    {
+      "c": 1,
+      "g1": 10,
+      "g2": 4,
+      "gcd": 2,
+      "lo": 1,
+      "hi": 2,
+      "menu_size": 1
+    },
+    {
+      "c": 4,
+      "g1": 23,
+      "g2": 10,
+      "gcd": 1,
+      "lo": 2,
+      "hi": 8,
+      "menu_size": 7
+    },
+    {
+      "c": 10,
+      "g1": 51,
+      "g2": 23,
+      "gcd": 1,
+      "lo": 5,
+      "hi": 21,
+      "menu_size": 17
+    },
+    {
+      "c": 23,
+      "g1": 111,
+      "g2": 51,
+      "gcd": 3,
+      "lo": 12,
+      "hi": 49,
+      "menu_size": 25
+    },
+    {
+      "c": 51,
+      "g1": 239,
+      "g2": 111,
+      "gcd": 1,
+      "lo": 26,
+      "hi": 109,
+      "menu_size": 84
+    },
+    {
+      "c": 111,
+      "g1": 513,
+      "g2": 239,
+      "gcd": 1,
+      "lo": 56,
+      "hi": 237,
+      "menu_size": 182
+    },
+    {
+      "c": 239,
+      "g1": 1099,
+      "g2": 513,
+      "gcd": 1,
+      "lo": 120,
+      "hi": 511,
+      "menu_size": 392
+    },
+    {
+      "c": 513,
+      "g1": 2353,
+      "g2": 1099,
+      "gcd": 1,
+      "lo": 257,
+      "hi": 1097,
+      "menu_size": 841
+    }
+  ],
+  "D": 460000,
+  "m": 56,
+  "M": "7/3",
+  "H": "107/50",
+  "R_large_seed": "23/5",
+  "large_sieve_reference": "Montgomery and Vaughan (1973), Theorem 1",
+  "alpha_exact": "31278107868329998287/6473924464345088000000",
+  "alpha_budget": "1/200",
+  "beta_exact_at_R": "182425417976339/17250000",
+  "beta_budget": 16777216,
+  "alpha_slack": "1091514453395441713/6473924464345088000000",
+  "beta_slack": "106981558023661/17250000",
+  "small_seed_beta_upper": 739260,
+  "scope": "Finite menu exceptions and rational constants; Analytic proof: manuscript Sections 4 and 5."
+}

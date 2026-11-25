@@ -124,7 +124,7 @@ theorem full_word_legal {n:ℕ} (hn:2≤n) (hs:List ℕ)
   unfold allowed at allowed_i
   omega
 
-private theorem sorted_if_last_one {n : ℕ} (w : List ℕ) (p:RankPlacement n)
+theorem sorted_if_last_one {n : ℕ} (w : List ℕ) (p:RankPlacement n)
     (h : w.getLast?=some 1) : sortWord p w = Equiv.refl _ := by
   induction w generalizing p with
   | nil => simp at h

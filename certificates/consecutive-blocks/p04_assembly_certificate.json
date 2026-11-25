@@ -1,0 +1,28 @@
+{
+  "passed": true,
+  "exact_arithmetic": true,
+  "scope": "Finite scalar inequalities in manuscript Section 6.",
+  "shift": "94/57",
+  "three_step_ratio": "1225043/125000",
+  "beta": 16777216,
+  "K": 318767104,
+  "contraction_factor": "59139951685131/59375000000000",
+  "contraction_slack": "235048314869/59375000000000",
+  "small_block_coefficients": {
+    "center_1": "4777/342",
+    "center_4": "580211/39330",
+    "center_10": "2612449/200583",
+    "center_23": "7718741/645354"
+  },
+  "tail_1_per_pass": "322/57",
+  "tail_2_per_pass": "166/19",
+  "large_center_per_pass": "615388033/49162500",
+  "last_group_per_pass": {
+    "last_4_passes": "654271/52440",
+    "last_5_passes": "3780757/334305",
+    "last_6_passes": "4183235/322677"
+  },
+  "total_coefficient": 4143972353,
+  "clean_upper_coefficient": 4294967296,
+  "bound": "E C <= 4143972353 n log_2(n) < 2^32 n log_2(n)"
+}

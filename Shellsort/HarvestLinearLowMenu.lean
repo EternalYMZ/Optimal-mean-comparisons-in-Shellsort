@@ -86,9 +86,9 @@ private theorem menu_mult {d B : ℕ} (hd:0<d) (G:Finset ℕ)
 
 /-- Sum over original grid tags, regrouping by denominator d. A full packet
 is paid at most floor(B/d) times. -/
-theorem linear_low_menu {n c g₁ g₂ D B : ℕ}
+theorem linear_low_menu_of_divisors {n g₁ g₂ D B : ℕ}
     (p : RankPlacement n) (T : ℕ) (hT:T≤n) (hg:0<g₂) (hle:g₂≤g₁)
-    (G:Finset ℕ) (menu:∀ h ∈ G, h∈window c (Nat.gcd g₁ g₂))
+    (G:Finset ℕ) (breaks : ∀ h ∈ G, ∀ d, d ∣ h → 1 < d → ¬ d ∣ g₁ ∨ ¬ d ∣ g₂)
     (bound:∀ h ∈ G, h≤B) :
     (∑ h ∈ G, ∑ a ∈ lowGrid h D, energy 0 (fun i : Fin n =>
       (slotError (gapSort (gapSort p g₁) g₂) T i : ℂ)) (a,h)) ≤
@@ -111,7 +111,7 @@ theorem linear_low_menu {n c g₁ g₂ D B : ℕ}
       have pos : 0<h := by have := mem_range.mp (mem_filter.mp hl).1; omega
       simp only [show 0<h ∧ d∣h from ⟨pos,dvdh⟩]
       exact (grid_packet (h:=h) (D:=D) (d:=d) z T).trans
-        (primitive_after_retained p T hT hg hle (by omega) (retained_breaks_divisor (menu h hh) dvdh gt))
+        (primitive_after_retained p T hT hg hle (by omega) (breaks h hh d dvdh gt))
     · simp only [V,not_nonempty_iff_eq_empty.mp he,sum_empty]
       split <;> positivity
   have one (d:ℕ) (hd:d∈Ioc 0 D) : (∑ h ∈ G,V h d) ≤ (B:ℝ)*g₁*s := by
@@ -130,6 +130,16 @@ theorem linear_low_menu {n c g₁ g₂ D B : ℕ}
   apply (sum_le_sum (fun d hd => one d hd)).trans
   simp only [sum_const,Nat.card_Ioc,Nat.sub_zero,nsmul_eq_mul]
   exact le_of_eq (by ring)
+
+theorem linear_low_menu {n c g₁ g₂ D B : ℕ}
+    (p : RankPlacement n) (T : ℕ) (hT:T≤n) (hg:0<g₂) (hle:g₂≤g₁)
+    (G:Finset ℕ) (menu:∀ h ∈ G, h∈window c (Nat.gcd g₁ g₂))
+    (bound:∀ h ∈ G, h≤B) :
+    (∑ h ∈ G, ∑ a ∈ lowGrid h D, energy 0 (fun i : Fin n =>
+      (slotError (gapSort (gapSort p g₁) g₂) T i : ℂ)) (a,h)) ≤
+      ((B:ℝ)*g₁*D) * ∑ i, |(slotError p T i:ℝ)| :=
+  linear_low_menu_of_divisors p T hT hg hle G
+    (fun h hh _ hd hp => retained_breaks_divisor (menu h hh) hd hp) bound
 
 /-- The physical two-pass state, actual window, and actual uniform mean. -/
 theorem actual_low_linear_mean {n D : ℕ} (p : RankPlacement n) (T:ℕ) (hT:T≤n)

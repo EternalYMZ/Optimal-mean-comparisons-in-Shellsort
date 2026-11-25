@@ -1,4 +1,7 @@
 import Shellsort.Actual214Calibration
+import Shellsort.ConsecutiveBlockBounds
+import Shellsort.ConsecutiveMenuEnergy
+import Shellsort.ConsecutiveTable
 import Shellsort.DivisiblePrefixExchange
 import Shellsort.DivisibleThreeGapMatching
 import Shellsort.DivisibleThreeGapTerminal
@@ -11,6 +14,7 @@ import Shellsort.PrescribedFirstGapLower
 import Shellsort.PrescribedFirstGapTailMatching
 import Shellsort.PrescribedFirstGapTailUpper
 import Shellsort.PrescribedFirstGapUpper
+import Shellsort.PrescribedInputLaw
 import Shellsort.PrescribedTwoGapLower
 import Shellsort.PrescribedTwoGapMatching
 import Shellsort.PrescribedTwoGapUpper
@@ -25,3 +29,14 @@ import Shellsort.WarmRestart
 #print axioms Shellsort.PredeterminedOptimum.exists_optimal_executed_family
 #check Shellsort.PhysicalKeyOptimum.exists_uniform_family_for_physical_keys
 #print axioms Shellsort.PhysicalKeyOptimum.exists_uniform_family_for_physical_keys
+
+#print axioms Shellsort.ConsecutiveMenus.menu_density
+#print axioms Shellsort.ConsecutiveMenus.proposal_acceptance
+#print axioms Shellsort.ConsecutiveMenus.realized_table
+#print axioms Shellsort.ConsecutiveMenus.square_sum
+#print axioms Shellsort.ConsecutiveMenus.small_center_contraction
+#print axioms Shellsort.ConsecutiveMenus.random_small_center
+#print axioms Shellsort.ConsecutiveBlockBounds.three_pass_endpoints
+#print axioms Shellsort.ConsecutiveBlockBounds.random_block_propagate
+#print axioms Shellsort.ConsecutiveBlockBounds.spectral_coefficients
+#print axioms Shellsort.PrescribedInputLaw.exists_short_table
