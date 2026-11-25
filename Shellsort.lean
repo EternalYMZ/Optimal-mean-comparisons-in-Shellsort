@@ -40,3 +40,5 @@ import Shellsort.WarmRestart
 #print axioms Shellsort.ConsecutiveBlockBounds.random_block_propagate
 #print axioms Shellsort.ConsecutiveBlockBounds.spectral_coefficients
 #print axioms Shellsort.PrescribedInputLaw.exists_short_table
+#check Shellsort.ConsecutiveMenus.small_center_submenu
+#print axioms Shellsort.ConsecutiveMenus.small_center_submenu

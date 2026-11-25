@@ -83,6 +83,35 @@ theorem small_center_contraction {n : ℕ} (p : RankPlacement n) (j : ℕ)
   convert mul_le_mul_of_nonneg_right coeff F using 1
   ring
 
+/-- At a verified center, retaining a fraction η of the menu costs at most
+a factor 1/η in the mean square bound, for each entrance permutation. -/
+theorem small_center_submenu {n : ℕ} (p : RankPlacement n) (j : ℕ)
+    (small : gap j ≤ 49932) (G : Finset ℕ) (sub : G ⊆ menu j)
+    (η : ℝ) (positive : 0 < η) (mass : η * (menu j).card ≤ G.card) :
+    (∑ h ∈ G, (squareDisplacement
+      (gapSort (gapSort (gapSort p (gap (j+2))) (gap (j+1))) h) : ℝ)) /
+        G.card ≤ (2^24 * (gap j:ℝ) * footrule p) / η := by
+  let E (h : ℕ) : ℝ := squareDisplacement
+    (gapSort (gapSort (gapSort p (gap (j+2))) (gap (j+1))) h)
+  let bound : ℝ := 2^24 * (gap j:ℝ) * footrule p
+  have cost : 0 ≤ bound := by unfold bound footrule transport; positivity
+  have menu_pos : 0 < ((menu j).card:ℝ) := by
+    have := menu_density j
+    have := gap_pos j
+    exact_mod_cast (show 0 < (menu j).card by omega)
+  have retained := (mul_pos positive menu_pos).trans_le mass
+  have smallMean : (∑ h ∈ menu j, E h) / (menu j).card ≤ bound :=
+    small_center_contraction p j small
+  have subsetSum : (∑ h ∈ G, E h) ≤ ∑ h ∈ menu j, E h :=
+    sum_le_sum_of_subset_of_nonneg sub (fun _ _ _ => by unfold E squareDisplacement; positivity)
+  change (∑ h ∈ G, E h) / G.card ≤ bound / η
+  rw [div_le_div_iff₀ retained positive]
+  calc
+    _ ≤ (bound * (menu j).card) * η :=
+      mul_le_mul_of_nonneg_right (subsetSum.trans ((div_le_iff₀ menu_pos).1 smallMean)) positive.le
+    _ = bound * (η * (menu j).card) := by ring
+    _ ≤ _ := mul_le_mul_of_nonneg_left mass cost
+
 /-- Starting from the indicated entrance budget, the next scale is reached
 under a fresh uniform menu draw at every center in the proved range. -/
 theorem random_small_center {n : ℕ} (hn : 0 < n) (j : ℕ) (small : gap j ≤ 49932)
