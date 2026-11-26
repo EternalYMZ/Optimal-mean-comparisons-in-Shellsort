@@ -6,6 +6,8 @@ For n ≥ 2 distinct keys in uniform random order, a table fixed from n alone at
 
 ## Check the Lean statements
 
+For nonuniform menus, the [bounded-atom transfer](Shellsort/WeightedMenu.lean) bounds weighted energy by the uniform estimate and proves the executed weighted bound on every input at seed centers up to 49,932. The [kernel replay](certificates/weighted-menus/p04_weighted_kernel.json) covers both roots. From this checkout run `lake build Shellsort.WeightedMenu`. The [selection check](certificates/weighted-menus/check_selection.py) verifies the tail constants used in shared-sample table selection and exhausts all legal tables and permutations through six keys.
+
 With Git and elan installed, run from the repository root:
 
 ```sh

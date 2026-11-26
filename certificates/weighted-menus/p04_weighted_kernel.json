@@ -1,0 +1,34 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py WeightedMenu.lean Shellsort.WeightedMenu.bounded_atom_reduction Shellsort.WeightedMenu.small_center_weighted",
+  "export_invocation": "leanexport WeightedMenu -- Shellsort.WeightedMenu.bounded_atom_reduction Shellsort.WeightedMenu.small_center_weighted",
+  "roots": [
+    "Shellsort.WeightedMenu.bounded_atom_reduction",
+    "Shellsort.WeightedMenu.small_center_weighted"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "0d5bae75120f4644830a4447fb8d540afc2fc5c6ac322991caa06c337a440ca7",
+  "proof_sha256": "68aad5705d28d7f6427ea398795a7f2580f7e3dbdf75424bb4b1613b32066b73",
+  "proof_bytes": 96081494,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.WeightedMenu.bounded_atom_reduction' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.WeightedMenu.small_center_weighted' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 21359 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.WeightedMenu.bounded_atom_reduction (G : Finset Nat) (w e : Nat \u2192 Real) :\n  forall {c L H D : Real},\n  LT.lt (OfNat.ofNat 0) c \u2192 LT.lt (OfNat.ofNat 0) L \u2192 Eq (Finset.sum G (fun (k : Nat) => w k)) (OfNat.ofNat 1) \u2192\n  (forall (h : Nat), Membership.mem G h \u2192 LE.le (w h) (HDiv.hDiv L c)) \u2192 LE.le (Nat.cast (Finset.card G))\n      (HMul.hMul H c) \u2192\n  (forall (h : Nat), Membership.mem G h \u2192 LE.le (OfNat.ofNat 0) (e h)) \u2192 LE.le\n      (HDiv.hDiv (Finset.sum G (fun (h : Nat) => e h)) (Nat.cast (Finset.card G))) D \u2192\n  And (LE.le (HDiv.hDiv c L) (Nat.cast (Finset.card G)))\n    (LE.le (Finset.sum G (fun (h : Nat) => HMul.hMul (w h) (e h))) (HMul.hMul (HMul.hMul L H) D)) :=\n  _\n\ntheorem Shellsort.WeightedMenu.small_center_weighted :\n  forall {n : Nat} (p : Shellsort.RankPlacement n) (j : Nat)\n    (small : LE.le (Shellsort.Actual214.gap j) (OfNat.ofNat 49932)) (w : Nat \u2192 Real) {T : Real},\n  LE.le (OfNat.ofNat 0) T \u2192 (forall (h : Nat),\n    Membership.mem (Shellsort.ConsecutiveMenus.menu j) h \u2192 LE.le (w h)\n      (HDiv.hDiv T (Nat.cast (Finset.card (Shellsort.ConsecutiveMenus.menu j))))) \u2192\n  LE.le\n    (Finset.sum (Shellsort.ConsecutiveMenus.menu j)\n      (fun (h : Nat) =>\n      HMul.hMul (w h)\n        (Int.cast\n          (Shellsort.RoughGapScaleAssembly.squareDisplacement\n            (Shellsort.gapSort\n              (Shellsort.gapSort (Shellsort.gapSort p (Shellsort.Actual214.gap (HAdd.hAdd j (OfNat.ofNat 2))))\n                (Shellsort.Actual214.gap (HAdd.hAdd j (OfNat.ofNat 1)))) h)))))\n    (HMul.hMul T\n      (HMul.hMul (HMul.hMul (HPow.hPow (OfNat.ofNat 2) (OfNat.ofNat 24)) (Nat.cast (Shellsort.Actual214.gap j)))\n        (Shellsort.footrule p))) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}
