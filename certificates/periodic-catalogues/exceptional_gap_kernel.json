@@ -1,0 +1,37 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py ExceptionalGapLower.lean Shellsort.ExceptionalGapLower.exceptional_suffix Shellsort.ExceptionalGapLower.uniform_exception Shellsort.ExceptionalGapLower.two_sorted_identity Shellsort.ExceptionalGapLower.parity_shift_price Shellsort.ExceptionalGapLower.legal_exception",
+  "export_invocation": "leanexport ExceptionalGapLower -- Shellsort.ExceptionalGapLower.exceptional_suffix Shellsort.ExceptionalGapLower.uniform_exception Shellsort.ExceptionalGapLower.two_sorted_identity Shellsort.ExceptionalGapLower.parity_shift_price Shellsort.ExceptionalGapLower.legal_exception",
+  "roots": [
+    "Shellsort.ExceptionalGapLower.exceptional_suffix",
+    "Shellsort.ExceptionalGapLower.uniform_exception",
+    "Shellsort.ExceptionalGapLower.two_sorted_identity",
+    "Shellsort.ExceptionalGapLower.parity_shift_price",
+    "Shellsort.ExceptionalGapLower.legal_exception"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "09ba6fba2be387146eef544a21395844c672adb200a9c3aedfd757d50016d8cc",
+  "proof_sha256": "7410545b8830f0192bf04247e1ae5a9054fe04b5eb168cb93c6279f68b9435ec",
+  "proof_bytes": 284038025,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.ExceptionalGapLower.exceptional_suffix' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.ExceptionalGapLower.uniform_exception' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.ExceptionalGapLower.two_sorted_identity' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.ExceptionalGapLower.parity_shift_price' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.ExceptionalGapLower.legal_exception' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 46049 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.ExceptionalGapLower.exceptional_suffix :\n  forall {n d H : Nat} (p : Shellsort.RankPlacement n) (u v : Shellsort.HarvestBlockIteration.PositiveWord),\n  (forall (k : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)),\n    Membership.mem u k \u2192 Dvd.dvd d (Subtype.val k)) \u2192\n  (forall (k : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)), Membership.mem v k \u2192 LE.le (Subtype.val k) H) \u2192\n  Eq (List.getLast? (List.map Subtype.val v)) (Option.some (OfNat.ofNat 1)) \u2192 LE.le\n    (Shellsort.footrule (Shellsort.gapSort p d))\n    (HMul.hMul (HMul.hMul (OfNat.ofNat 2) (Nat.cast H))\n      (Nat.cast (Shellsort.ordinaryWordShifts (Shellsort.sortWord p (List.map Subtype.val u)) v))) :=\n  _\n\ntheorem Shellsort.ExceptionalGapLower.uniform_exception :\n  forall {n d H : Nat} (hd : LE.le (OfNat.ofNat 2) d) (fits : LE.le d n)\n    (u v : Shellsort.HarvestBlockIteration.PositiveWord),\n  (forall (k : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)),\n    Membership.mem u k \u2192 Dvd.dvd d (Subtype.val k)) \u2192\n  (forall (g : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)), Membership.mem v g \u2192 LE.le (Subtype.val g) H) \u2192\n  Eq (List.getLast? (List.map Subtype.val v)) (Option.some (OfNat.ofNat 1)) \u2192 (let price : Real :=\n    HDiv.hDiv (HMul.hMul (Nat.cast n) (Real.sqrt (HMul.hMul (Nat.cast n) (Nat.cast d)))) (OfNat.ofNat 1024);\n  And\n    (LE.le price\n      (HMul.hMul (HMul.hMul (OfNat.ofNat 2) (Nat.cast H))\n        (Shellsort.uniformAverage\n          (fun (p : Shellsort.RankPlacement n) => Nat.cast (Shellsort.ordinaryWordShifts p (HAppend.hAppend u v))))))\n    (LE.le price\n      (HMul.hMul (HMul.hMul (OfNat.ofNat 2) (Nat.cast H))\n        (Shellsort.uniformAverage\n          (fun (p : Shellsort.RankPlacement n) =>\n          Nat.cast (Shellsort.ordinaryWordComparisons p (HAppend.hAppend u v))))))) :=\n  _\n\ntheorem Shellsort.ExceptionalGapLower.two_sorted_identity :\n  forall {n : Nat} (p : Shellsort.RankPlacement n),\n  Eq (Shellsort.footrule (Shellsort.gapSort p (OfNat.ofNat 2)))\n    (HMul.hMul (OfNat.ofNat 2)\n      (Nat.cast (Shellsort.gapInversions (Shellsort.gapSort p (OfNat.ofNat 2)) (OfNat.ofNat 1)))) :=\n  _\n\ntheorem Shellsort.ExceptionalGapLower.parity_shift_price :\n  forall {n H : Nat} (p : Shellsort.RankPlacement n) (u v : Shellsort.HarvestBlockIteration.PositiveWord),\n  (forall (k : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)),\n    Membership.mem u k \u2192 Dvd.dvd (OfNat.ofNat 2) (Subtype.val k)) \u2192\n  (forall (k : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)), Membership.mem v k \u2192 LE.le (Subtype.val k) H) \u2192\n  Eq (List.getLast? (List.map Subtype.val v)) (Option.some (OfNat.ofNat 1)) \u2192 LE.le\n    (Nat.cast (Shellsort.gapInversions (Shellsort.gapSort p (OfNat.ofNat 2)) (OfNat.ofNat 1)))\n    (HMul.hMul (Nat.cast H)\n      (Nat.cast (Shellsort.ordinaryWordShifts (Shellsort.sortWord p (List.map Subtype.val u)) v))) :=\n  _\n\ntheorem Shellsort.ExceptionalGapLower.legal_exception :\n  forall {n d H : Nat},\n  LE.le (OfNat.ofNat 2) d \u2192 LE.le d n \u2192 LE.le (OfNat.ofNat 1) H \u2192 (forall (w :\n      Shellsort.HarvestBlockIteration.PositiveWord),\n  Shellsort.PredeterminedOptimum.Legal n w \u2192 (forall (g : Subtype (fun (k : Nat) => LT.lt (OfNat.ofNat 0) k)),\n    Membership.mem w g \u2192 LT.lt H (Subtype.val g) \u2192 Dvd.dvd d (Subtype.val g)) \u2192\n  (let price : Real :=\n    HDiv.hDiv (HMul.hMul (Nat.cast n) (Real.sqrt (HMul.hMul (Nat.cast n) (Nat.cast d)))) (OfNat.ofNat 1024);\n  And\n    (LE.le price\n      (HMul.hMul (HMul.hMul (OfNat.ofNat 2) (Nat.cast H))\n        (Shellsort.uniformAverage\n          (fun (p : Shellsort.RankPlacement n) => Nat.cast (Shellsort.ordinaryWordShifts p w)))))\n    (LE.le price\n      (HMul.hMul (HMul.hMul (OfNat.ofNat 2) (Nat.cast H))\n        (Shellsort.uniformAverage\n          (fun (p : Shellsort.RankPlacement n) => Nat.cast (Shellsort.ordinaryWordComparisons p w))))))) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}

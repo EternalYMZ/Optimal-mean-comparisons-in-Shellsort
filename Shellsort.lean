@@ -4,6 +4,8 @@ import Shellsort.ConsecutiveMenuEnergy
 import Shellsort.WeightedMenu
 import Shellsort.CatalogueSchedules
 import Shellsort.PeriodicMenus
+import Shellsort.ExceptionalGapLower
+import Shellsort.ResidueQuotientLower
 import Shellsort.ConsecutiveTable
 import Shellsort.DivisiblePrefixExchange
 import Shellsort.DivisibleThreeGapMatching

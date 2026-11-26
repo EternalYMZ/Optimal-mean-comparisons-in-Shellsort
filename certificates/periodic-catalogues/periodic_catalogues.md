@@ -1,0 +1,18 @@
+# Periodic catalogues with finitely many exceptional gaps
+
+Run `python periodic_catalogues.py N Q R ... --cutoff C --exceptions E ...` from this directory. The permitted nonfinal gaps are the integers greater than `C` in the listed residue classes modulo `Q`, together with the explicitly listed integers `E` (each at least two). The final gap is always one. This represents any finite additions or deletions to a periodic tail: place the cutoff beyond its last deletion and list the permitted smaller gaps. The sampler uses only gaps strictly below the input size.
+
+The Python entry point is `sample_schedule(n, q, residues, cutoff=1, rng=None, exceptions=())`. The original positional arguments and the default command-line JSON are preserved. A system random source samples the quotient blocks; `--seed` gives reproducible examples. The returned `Schedule` contains the complete `gaps` and the chosen finishing `suffix`. For a primitive tail the available RMS guarantees still use `prefix_length(s)`. For an empty periodic tail the sampler uses the largest permitted legal gap followed by one, or just one if there is no legal nonfinal gap.
+
+For tail divisor $d>1$, the suffix construction optimizes the paper's **guaranteed upper coefficient** among decreasing gcd ladders. Starting at $a=d$, using gap $b$ changes the divisor to $a'=\gcd(a,b)$ and adds $(a-a')/(b\sqrt a)$ to the score. The mandatory final pass uses the same rule. Multiplication by $\sqrt\pi/8$ gives the uniform-mean upper coefficient on the $n^{3/2}$ scale for the fixed catalogue. In the parity case the optimum uses the largest permitted odd gap (including one); with general exceptions at $d>2$ this optimization alone gives an upper bound. The lowest quotient block is chosen above both the cutoff and all legal exceptions in physical units, so the displayed word is strictly decreasing.
+
+For nested exceptions $d=b_0>b_1>\cdots>b_k>1$ with $b_i\mid b_{i-1}$, the quotient lower bound in the paper matches the computed coefficient, and every sufficiently large exact optimizer contains all $b_i$. The same lower bound matches the construction when $d=2e$, $e$ divides every nonfinal gap and the quotient permits an odd exception. The [quotient checker](check_quotient_lower.py) exercises the transition on actual comparison counts.
+
+Process the exceptional gaps in descending order. For each reachable divisor retain its cheapest prefix. A later transition depends only on this divisor and the remaining gaps. Equal scores choose the shorter word, then the lexicographically larger word. The comparison groups inverse square roots that differ by a rational factor. Distinct positive square classes have linearly independent square roots over the rationals. After cancellations, adaptive integer-square-root intervals determine the sign of every nonzero difference. There are at most $\tau(d)$ states after any gap, and every reducing prefix has at most $\lfloor\log_2 d\rfloor$ steps.
+
+```sh
+python periodic_catalogues.py 1000 6 0 --cutoff 9 --exceptions 9 8 5 --seed 8
+python periodic_catalogues.py --check
+```
+
+The example chooses the suffix $(9,8,1)$ with divisor states $6,3,1$. Its JSON terms `{"6":"1/3","3":"1/4"}` stand for $\frac{\sqrt\pi}{8}(1/(3\sqrt6)+1/(4\sqrt3))$. The check compares 384 catalogue/divisor combinations to all of their suffix subsets, checks strict legality on 30 exceptional schedules and tests exact ties and near cancellation. For every legal table and permutation through seven keys it checks the parity lower bound on actual suffix shifts (173,870 executions). It separately checks the general displacement lower bound on 5,880 divisor-three executions. The original periodic density, padded-class and RMS checks run in the same invocation.

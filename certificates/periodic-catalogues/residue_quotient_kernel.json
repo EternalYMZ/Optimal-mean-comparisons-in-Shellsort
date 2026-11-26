@@ -1,0 +1,33 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py ResidueQuotientLower.lean Shellsort.ResidueQuotientLower.gap_sort_inversion_drop",
+  "export_invocation": "leanexport ResidueQuotientLower -- Shellsort.ResidueQuotientLower.gap_sort_inversion_drop",
+  "roots": [
+    "Shellsort.ResidueQuotientLower.gap_sort_inversion_drop"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "6eb706f672e60e657b98a35d3076d4a9d8cb7f1711ff064b0fd15b10dbe3fdeb",
+  "proof_sha256": "aff528b50d05a33ff2fbe062d7b20ef800364928b263e443a4ec11522c6a8ee7",
+  "proof_bytes": 23429340,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.ResidueQuotientLower.gap_sort_inversion_drop' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 6032 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.ResidueQuotientLower.gap_sort_inversion_drop :\n  forall {n : Nat} (p : Shellsort.RankPlacement n) (e : Nat),\n  LE.le (HAdd.hAdd (Shellsort.gapInversions (Shellsort.gapSort p e) (OfNat.ofNat 1)) (Shellsort.gapInversions p e))\n    (Shellsort.gapInversions p (OfNat.ofNat 1)) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}
