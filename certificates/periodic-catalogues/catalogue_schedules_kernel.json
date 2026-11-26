@@ -1,0 +1,38 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py CatalogueSchedules.lean Shellsort.CatalogueSchedules.assemble Shellsort.CatalogueSchedules.eightTable_legal Shellsort.CatalogueSchedules.eightTable_length Shellsort.CatalogueSchedules.eight_calibration Shellsort.CatalogueSchedules.anchor_admissible Shellsort.CatalogueSchedules.mixture_energy",
+  "export_invocation": "leanexport CatalogueSchedules -- Shellsort.CatalogueSchedules.assemble Shellsort.CatalogueSchedules.eightTable_legal Shellsort.CatalogueSchedules.eightTable_length Shellsort.CatalogueSchedules.eight_calibration Shellsort.CatalogueSchedules.anchor_admissible Shellsort.CatalogueSchedules.mixture_energy",
+  "roots": [
+    "Shellsort.CatalogueSchedules.assemble",
+    "Shellsort.CatalogueSchedules.eightTable_legal",
+    "Shellsort.CatalogueSchedules.eightTable_length",
+    "Shellsort.CatalogueSchedules.eight_calibration",
+    "Shellsort.CatalogueSchedules.anchor_admissible",
+    "Shellsort.CatalogueSchedules.mixture_energy"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "f6421e8d175c68db8eba5080e8842295de33c3f51f81f1b246ef9c4710bc408b",
+  "proof_sha256": "d569f95e127b5a6f2109d82c3eec3be7528256f394d7f062600e24efdab6a2fb",
+  "proof_bytes": 58268579,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.CatalogueSchedules.assemble' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.CatalogueSchedules.eightTable_legal' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.CatalogueSchedules.eightTable_length' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.CatalogueSchedules.eight_calibration' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.CatalogueSchedules.anchor_admissible' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.CatalogueSchedules.mixture_energy' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 14327 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.CatalogueSchedules.assemble (m n : Nat) (scale X cost : Nat \u2192 Real) :\n  forall {a b R K u v w : Real},\n  LE.le (OfNat.ofNat 0) a \u2192 LE.le (OfNat.ofNat 0) b \u2192 LT.lt (OfNat.ofNat 0) K \u2192 LE.le (OfNat.ofNat 0) v \u2192 LE.le\n      (OfNat.ofNat 0) w \u2192\n  LE.le (HAdd.hAdd (HMul.hMul a (HPow.hPow (HMul.hMul K R) (OfNat.ofNat 2))) (HMul.hMul b (HMul.hMul K R)))\n      (HPow.hPow K (OfNat.ofNat 2)) \u2192\n  (forall (i : Nat), LE.le i m \u2192 LT.lt (OfNat.ofNat 0) (scale i)) \u2192 (forall (i : Nat),\n    LT.lt i m \u2192 LE.le (OfNat.ofNat 0) (X i)) \u2192\n  (forall (i : Nat), LT.lt i m \u2192 LE.le (scale i) (HMul.hMul R (scale (HAdd.hAdd i (OfNat.ofNat 1))))) \u2192 LE.le\n      (Real.sqrt (X (OfNat.ofNat 0))) (HMul.hMul K (scale (OfNat.ofNat 0))) \u2192\n  (forall (i : Nat),\n    LT.lt i m \u2192 LE.le (X (HAdd.hAdd i (OfNat.ofNat 1)))\n      (HAdd.hAdd (HMul.hMul a (X i))\n        (HMul.hMul (HMul.hMul b (scale (HAdd.hAdd i (OfNat.ofNat 1)))) (Real.sqrt (X i))))) \u2192\n  (forall (i : Nat),\n    LT.lt i m \u2192 LE.le (cost i)\n      (HMul.hMul (Nat.cast n)\n        (HAdd.hAdd u\n          (HDiv.hDiv\n            (HAdd.hAdd (HMul.hMul v (Real.sqrt (X i))) (HMul.hMul w (Real.sqrt (X (HAdd.hAdd i (OfNat.ofNat 1))))))\n            (scale (HAdd.hAdd i (OfNat.ofNat 1))))))) \u2192\n  And (forall (i : Nat), LE.le i m \u2192 LE.le (Real.sqrt (X i)) (HMul.hMul K (scale i)))\n    (LE.le (Finset.sum (Finset.range m) (fun (i : Nat) => cost i))\n      (HMul.hMul (Nat.cast m)\n        (HMul.hMul (Nat.cast n) (HAdd.hAdd (HAdd.hAdd u (HMul.hMul (HMul.hMul v K) R)) (HMul.hMul w K))))) :=\n  _\n\ntheorem Shellsort.CatalogueSchedules.eightTable_legal (pick : Shellsort.CatalogueSchedules.Choices) (k n : Nat)\n  (hn : LT.lt (OfNat.ofNat 1) n)\n  (fits :\n    LT.lt (OfNat.ofNat 0) k \u2192 LT.lt\n      (HAdd.hAdd (HMul.hMul (OfNat.ofNat 4) (HPow.hPow (OfNat.ofNat 8) k)) (OfNat.ofNat 2)) n) :\n  Shellsort.PredeterminedOptimum.Legal n (Shellsort.CatalogueSchedules.eightTable pick k) :=\n  _\n\ntheorem Shellsort.CatalogueSchedules.eightTable_length (pick : Shellsort.CatalogueSchedules.Choices) (k : Nat) :\n  Eq (List.length (Shellsort.CatalogueSchedules.eightTable pick k))\n    (HAdd.hAdd (HMul.hMul (OfNat.ofNat 3) k) (OfNat.ofNat 1)) :=\n  _\n\ntheorem Shellsort.CatalogueSchedules.eight_calibration :\n  forall {\u03b8 : Real},\n  LT.lt \u03b8 (HDiv.hDiv (OfNat.ofNat 1) (OfNat.ofNat 64)) \u2192 Exists\n    (fun (\u03b5 : Real) =>\n    And (LT.lt (OfNat.ofNat 0) \u03b5)\n      (forall (b : Real),\n      Exists\n        (fun (K : Real) =>\n        And (LT.lt (OfNat.ofNat 0) K)\n          (LE.le\n            (HAdd.hAdd (HMul.hMul (HAdd.hAdd \u03b8 \u03b5) (HPow.hPow (HMul.hMul K (OfNat.ofNat 8)) (OfNat.ofNat 2)))\n              (HMul.hMul b (HMul.hMul K (OfNat.ofNat 8)))) (HPow.hPow K (OfNat.ofNat 2)))))) :=\n  _\n\ntheorem Shellsort.CatalogueSchedules.anchor_admissible (c h : Nat) :\n  Iff (Nat.Coprime h (Nat.gcd (HAdd.hAdd (HMul.hMul (OfNat.ofNat 4) c) (OfNat.ofNat 2)) (HMul.hMul (OfNat.ofNat 4) c)))\n    (Odd h) :=\n  _\n\ntheorem Shellsort.CatalogueSchedules.mixture_energy :\n  forall {n : Nat} (p : Shellsort.RankPlacement n) (g\u2081 g\u2082 : Nat) (good bad : Finset Nat) (\u03bd \u03bc : Nat \u2192 Real)\n    {\u03b4 \u03b5 fee : Real},\n  Eq (Finset.sum bad (fun (x : Nat) => \u03bc x)) (OfNat.ofNat 1) \u2192 (forall (h : Nat),\n    Membership.mem bad h \u2192 LE.le (OfNat.ofNat 0) (\u03bc h)) \u2192\n  LE.le (OfNat.ofNat 0) \u03b4 \u2192 LE.le \u03b4 (OfNat.ofNat 1) \u2192 LE.le (OfNat.ofNat 0) \u03b5 \u2192 LE.le (OfNat.ofNat 0) fee \u2192\n  (let Q : Real := Int.cast (Shellsort.RoughGapScaleAssembly.squareDisplacement p);\n  let E : Nat \u2192 Real :=\n    fun (h : Nat) =>\n    Int.cast\n      (Shellsort.RoughGapScaleAssembly.squareDisplacement\n        (Shellsort.gapSort (Shellsort.gapSort (Shellsort.gapSort p g\u2081) g\u2082) h));\n  LE.le (Finset.sum good (fun (h : Nat) => HMul.hMul (\u03bd h) (E h))) (HAdd.hAdd (HMul.hMul \u03b5 Q) fee) \u2192 LE.le\n    (HAdd.hAdd (HMul.hMul (HSub.hSub (OfNat.ofNat 1) \u03b4) (Finset.sum good (fun (h : Nat) => HMul.hMul (\u03bd h) (E h))))\n      (HMul.hMul \u03b4 (Finset.sum bad (fun (h : Nat) => HMul.hMul (\u03bc h) (E h)))))\n    (HAdd.hAdd (HMul.hMul (HAdd.hAdd \u03b5 \u03b4) Q) fee)) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}

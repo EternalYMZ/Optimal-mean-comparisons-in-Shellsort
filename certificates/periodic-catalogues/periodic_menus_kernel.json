@@ -1,0 +1,36 @@
+{
+  "invocation": "lake env python replay_scale_penalty.py PeriodicMenus.lean Shellsort.PeriodicMenus.anchors_gcd Shellsort.PeriodicMenus.menu_card Shellsort.PeriodicMenus.four_residues Shellsort.PeriodicMenus.every_three_share_prime",
+  "export_invocation": "leanexport PeriodicMenus -- Shellsort.PeriodicMenus.anchors_gcd Shellsort.PeriodicMenus.menu_card Shellsort.PeriodicMenus.four_residues Shellsort.PeriodicMenus.every_three_share_prime",
+  "roots": [
+    "Shellsort.PeriodicMenus.anchors_gcd",
+    "Shellsort.PeriodicMenus.menu_card",
+    "Shellsort.PeriodicMenus.four_residues",
+    "Shellsort.PeriodicMenus.every_three_share_prime"
+  ],
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "source_sha256": "e4ace40c4fd9e074c1b7f8aaa6eba54c63e853422f72e366cc0ed7a574f00969",
+  "proof_sha256": "a9dde3ae0568df2e2e87f56f93855a96e0643bbc7d080ed537dfc855c69317d9",
+  "proof_bytes": 18362024,
+  "metadata": {
+    "exporter": {
+      "name": "lean4export",
+      "version": "3.1.0"
+    },
+    "format": {
+      "version": "3.1.0"
+    },
+    "lean": {
+      "githash": "611c117bfaf7b7ae1cfcf246ce6fba31e8f509e9",
+      "version": "4.36.0"
+    }
+  },
+  "lean_output": "'Shellsort.PeriodicMenus.anchors_gcd' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.PeriodicMenus.menu_card' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.PeriodicMenus.four_residues' depends on axioms: [propext, Classical.choice, Quot.sound]\n'Shellsort.PeriodicMenus.every_three_share_prime' depends on axioms: [propext, Classical.choice, Quot.sound]",
+  "lean_stderr": "",
+  "nanoda_output": "Checked 4888 declarations with no errors",
+  "nanoda_stderr": "",
+  "statements": "theorem Shellsort.PeriodicMenus.anchors_gcd :\n  forall {c q a\u2080 : Nat} {A : Finset Nat},\n  Dvd.dvd q c \u2192 Membership.mem A a\u2080 \u2192 Eq (Finset.gcd (Shellsort.PeriodicMenus.anchors c q a\u2080 A) id)\n    (Finset.gcd (Insert.insert q A) id) :=\n  _\n\ntheorem Shellsort.PeriodicMenus.menu_card (q k : Nat) (A : Finset Nat) (qp : LT.lt (OfNat.ofNat 0) q)\n  (res : (forall (a : Nat), Membership.mem A a \u2192 LT.lt a q)) :\n  Eq (Finset.card (Shellsort.PeriodicMenus.menu (HMul.hMul k q) q A)) (HMul.hMul k (Finset.card A)) :=\n  _\n\ntheorem Shellsort.PeriodicMenus.four_residues :\n  And (Eq (Finset.gcd (Insert.insert (OfNat.ofNat 210) Shellsort.PeriodicMenus.residues210) id) (OfNat.ofNat 1))\n    (forall (x : Nat),\n    Membership.mem Shellsort.PeriodicMenus.residues210 x \u2192 (forall (y : Nat)\n      (a._@._internal._hyg.0 : Membership.mem Shellsort.PeriodicMenus.residues210 y) (z : Nat),\n    Membership.mem Shellsort.PeriodicMenus.residues210 z \u2192 LT.lt (OfNat.ofNat 1)\n      (Nat.gcd (OfNat.ofNat 210) (Nat.gcd x (Nat.gcd y z))))) :=\n  _\n\ntheorem Shellsort.PeriodicMenus.every_three_share_prime (x y z : Nat)\n  (hx : Membership.mem Shellsort.PeriodicMenus.residues210 (HMod.hMod x (OfNat.ofNat 210)))\n  (hy : Membership.mem Shellsort.PeriodicMenus.residues210 (HMod.hMod y (OfNat.ofNat 210)))\n  (hz : Membership.mem Shellsort.PeriodicMenus.residues210 (HMod.hMod z (OfNat.ofNat 210))) :\n  Exists\n    (fun (p : Nat) =>\n    And (Nat.Prime p) (And (Dvd.dvd p (OfNat.ofNat 210)) (And (Dvd.dvd p x) (And (Dvd.dvd p y) (Dvd.dvd p z))))) :=\n  _\n\naxiom propext {a b : Sort 0} : Iff a b \u2192 Eq a b\n\naxiom Quot.sound.{u} {\u03b1 : Sort u} {r : \u03b1 \u2192 \u03b1 \u2192 Sort 0} {a b : \u03b1} : r a b \u2192 Eq (Quot.mk r a) (Quot.mk r b)\n\naxiom Classical.choice.{u} {\u03b1 : Sort u} : Nonempty \u03b1 \u2192 \u03b1"
+}

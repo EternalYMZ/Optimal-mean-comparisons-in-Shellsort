@@ -2,6 +2,8 @@ import Shellsort.Actual214Calibration
 import Shellsort.ConsecutiveBlockBounds
 import Shellsort.ConsecutiveMenuEnergy
 import Shellsort.WeightedMenu
+import Shellsort.CatalogueSchedules
+import Shellsort.PeriodicMenus
 import Shellsort.ConsecutiveTable
 import Shellsort.DivisiblePrefixExchange
 import Shellsort.DivisibleThreeGapMatching
